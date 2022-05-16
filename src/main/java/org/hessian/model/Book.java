@@ -5,17 +5,17 @@ import java.io.Serializable;
 
 public class Book implements Serializable {
 
-    private Long bookId;
+    private Integer bookId;
     private String title;
     private String description;
     private Integer year;
-    private Long authorId;
+    private Integer authorId;
 
     public Book() {
 
     }
 
-    public Book(Long bookId, String title, String description, Integer year, Long authorId) {
+    public Book(Integer bookId, String title, String description, Integer year, Integer authorId) {
         this.bookId = bookId;
         this.title = title;
         this.description = description;
@@ -23,11 +23,11 @@ public class Book implements Serializable {
         this.authorId = authorId;
     }
 
-    public Long getBookId() {
+    public Integer getBookId() {
         return bookId;
     }
 
-    public void setBookId(Long bookId) {
+    public void setBookId(Integer bookId) {
         this.bookId = bookId;
     }
 
@@ -55,11 +55,11 @@ public class Book implements Serializable {
         this.year = year;
     }
 
-    public Long getAuthorId() {
+    public Integer getAuthorId() {
         return authorId;
     }
 
-    public void setAuthorId(Long authorId) {
+    public void setAuthorId(Integer authorId) {
         this.authorId = authorId;
     }
 

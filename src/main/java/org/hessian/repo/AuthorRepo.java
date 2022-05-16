@@ -61,6 +61,25 @@ public class AuthorRepo {
         return authors;
     }
 
+    public Author getAuthorById(Integer id) throws SQLException {
+        Connection con=utils.getConnection();
+        Author authorDefault = new Author();
+        try(PreparedStatement preStmt=con.prepareStatement("select * from \"Author\" where \"authorId\" = ?" )) {
+            preStmt.setInt(1, id);
+            try(ResultSet result=preStmt.executeQuery()) {
+                if (result.next()) {
+                    String name;
+                    Integer age;
+                    name = result.getString("name");
+                    age = result.getInt("age");
+                    Author author=new Author(id,name, age);
+                    return author;
+                }
+            }
+        }
+        return authorDefault;
+    }
+
     public List<Author> getAuthorsBySearch(String keyword) throws SQLException {
         Connection con=utils.getConnection();
         List<Author> authors=new ArrayList<>();

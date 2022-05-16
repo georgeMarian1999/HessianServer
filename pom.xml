@@ -40,4 +40,19 @@
 
 
     </dependencies>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.2</version>
+                <configuration>
+                    <warName>HessianJavaServer</warName>
+                    <outputDirectory>/Users/georgemarianmihailescu/Desktop/Master/apache-tomcat-8.5.78/webapps</outputDirectory>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
