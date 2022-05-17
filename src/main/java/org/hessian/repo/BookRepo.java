@@ -145,11 +145,11 @@ public class BookRepo {
         Connection con = utils.getConnection();
 
         try (PreparedStatement preparedStatement = con.prepareStatement("UPDATE \"Book\" set \"title\" = ?, \"description\" = ? ,\"year\" = ?, \"authorId\" = ? where \"bookId\" = ? ")) {
-            preparedStatement.setString(2, title);
-            preparedStatement.setString(3, description);
-            preparedStatement.setInt(4, year);
-            preparedStatement.setInt(5, authorId);
-            preparedStatement.setInt(3, id);
+            preparedStatement.setString(1, title);
+            preparedStatement.setString(2, description);
+            preparedStatement.setInt(3, year);
+            preparedStatement.setInt(4, authorId);
+            preparedStatement.setInt(5, id);
 
             int result = preparedStatement.executeUpdate();
         }
